@@ -1,0 +1,25 @@
+{
+    "name": "unityshaderlab",
+    "displayName": "UnityShaderlab",
+    "description": "Unity Shader Support.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.52.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "shaderlab",
+            "aliases": ["Shaderlab", "shaderlab"],
+            "extensions": [".shader",".cginc",".glslinc",".hlslinc"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "shaderlab",
+            "scopeName": "source.shader",
+            "path": "./syntaxes/shaderlab.tmLanguage.json"
+        }]
+    }
+}
