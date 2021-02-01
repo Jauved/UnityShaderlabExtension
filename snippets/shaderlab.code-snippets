@@ -1,7 +1,7 @@
 {
     "Shader Main":{
         "prefix": "Shader",
-        "body": ["Shader \"${1:StarUnion}/${2:SubName}/${3:Name}\"","{","\t$0","}"],
+        "body": ["Shader \"${1:StarUnion}/${2:SubName}/${3:Name}\"\t{\t$0\t}"],
         "description": "Shader Title"
     }
 }
