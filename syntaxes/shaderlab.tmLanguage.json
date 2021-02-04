@@ -9,22 +9,44 @@
             "include": "#keywords"
         },
         {
-            "include": "#structs"
-        },
-        {
             "include": "#types"
-        },
-        {
-            "include": "#builtin-props"
         },
         {
             "include": "#strings"
         },
         {
-            "include": "#objectkey"
+            "include": "#tags"
+        },
+        {
+            "include": "#variable"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "name": "meta.attribute.shaderlab",
+            "begin": "(\\[)",
+            "end": "(\\])",
+            "patterns": [
+                {
+                    "name": "support.type.attributename.shaderlab",
+                    "match": "\\G([a-zA-Z]+)\\b"
+                },
+                {
+                    "include": "#numbers"
+                }
+            ]
         }
     ],
     "repository": {
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.shaderlab",
+                    "match": "\\b([0-9]+\\.?[0-9]*)\\b"
+                }
+            ]
+        },
         "comments": {
             "patterns": [
                 {
@@ -42,32 +64,23 @@
                 }
             ]
         },
-        "structs": {
+        "types": {
             "patterns": [
+                {
+                    "name": "support.type.basic.shaderlab",
+                    "match": "\\b(Range|Float|Int|Color|Vector|2D|3D|Cube|Any)\\b"
+                },
                 {
                     "name": "storage.type.structure.shaderlab",
                     "match": "\\b(Shader|Properties|SubShader|Pass|Category)\\b"
-                }
-            ]
-        },
-        "types":{
-            "patterns": [{
-                "name": "support.type.basic.shaderlab",
-                "match": "\\b(Range|Float|Int|Color|Vector|2D|3D|Cube|Any)\\b"
-            }]
-        },
-        "builtin-props": {
-            "patterns": [
+                },
                 {
                     "name": "support.type.propertyname.shaderlab",
                     "match": "\\b(Name|Tags|Fallback|CustomEditor|Cull|ZWrite|ZTest|Offset|Blend|BlendOp|ColorMask|AlphaToMask|LOD|Lighting|Stencil|Ref|ReadMask|WriteMask|Comp|CompBack|CompFront|Fail|ZFail|UsePass|GrabPass|Dependency|Material|Diffuse|Ambient|Shininess|Specular|Emission|Fog|Mode|Density|SeparateSpecular|SetTexture|Combine|ConstantColor|Matrix|AlphaTest|ColorMaterial|BindChannels|Bind)\\b"
                 }
             ]
         },
-        "strings": {
-            "name": "string.shaderlab",
-            "begin": "\"",
-            "end": "\"",
+        "tags": {
             "patterns": [
                 {
                     "include": "#builtin-tags"
@@ -77,9 +90,13 @@
                 }
             ]
         },
+        "strings":{
+            "name":"string.shaderlab",
+            "match": "(?<!\"\\s*=\\s*)\"[^\"=]*\"(?!\\s*=\\s*\")"
+        },
         "builtin-tags": {
             "name": "support.type.propertyname.shaderlab",
-            "match": "\\b(Queue|RenderType|DisableBatching|ForceNoShadowCasting|IgnoreProjector|CanUseSpriteAtlas|PreviewType|LightMode|PassFlags)\\b"
+            "match": "\"\\b(Queue|RenderType|DisableBatching|ForceNoShadowCasting|IgnoreProjector|CanUseSpriteAtlas|PreviewType|LightMode|PassFlags)\\b\""
         },
         "builtin-tag-values": {
             "patterns": [
@@ -90,7 +107,19 @@
         },
         "builtin-tag-value-RenderTypes": {
             "name": "support.type.property-name.shaderlab",
-            "match": "\\b(Opaque|Transparent|TransparentCutout|Background|Overlay|TreeOpaque|TreeTransparentCutout|TreeBillboard|Grass|GrassBillboard)\\b"
+            "match": "\"\\b(Opaque|Transparent|TransparentCutout|Background|Overlay|TreeOpaque|TreeTransparentCutout|TreeBillboard|Grass|GrassBillboard)\\b\""
+        },
+        "variable": {
+            "patterns": [
+                {
+                    "name": "support.variable.declaration.shaderlab",
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\("
+                },
+                {
+                    "name": "support.variable.reference.shaderlab",
+                    "match": "\\[([a-zA-Z_][a-zA-Z0-9_]*)\\](?!\\s*[a-zA-Z_][a-zA-Z0-9_]*\\s*\\(\")"
+                }
+            ]
         }
     },
     "scopeName": "source.shader"

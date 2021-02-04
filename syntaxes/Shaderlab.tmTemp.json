@@ -20,5 +20,23 @@
                 "match": "\\b(Queue|RenderType|DisableBatching|ForceNoShadowCasting|IgnoreProjector|CanUseSpriteAtlas|PreviewType|LightMode|PassFlags)\\b"
             }
         ]
+    },
+    "strings-new":{
+        "name":"string.shaderlab",
+        //匹配(前面没有"=, "中没有"和=的部分", 同时后面没有=")
+        "match": "(?<!\"\\s*=\\s*)\"[^\"=]*\"(?!\\s*=\\s*\")"
+    },
+    "strings01": {
+        "name": "string.shaderlab",
+        "begin": "\"",
+        "end": "\"",
+        "patterns": [
+            {
+                "include": "#builtin-tags"
+            },
+            {
+                "include": "#builtin-tag-values"
+            }
+        ]
     }
 }
