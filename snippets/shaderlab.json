@@ -1,7 +1,7 @@
 {
     "Shader Built-in Main": {
         "prefix": "Shader",
-        "body": [
+        "body":[
             "Shader \"${1:StarUnion}/${2:SubName}/${3:Name}\"",
             "{",
             "\tProperties",

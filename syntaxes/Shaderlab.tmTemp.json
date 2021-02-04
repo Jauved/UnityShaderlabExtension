@@ -1,0 +1,24 @@
+{
+    "strings": {
+        "name": "string.quoted.double.shaderlab",
+        "begin": "\"$(\"=){0}",
+        "end": "\"",
+        "patterns": [
+            {
+                "name": "constant.character.escape.shaderlab",
+                "match": "\\\\."
+            }
+        ]
+    },
+    "builtin-tags": {
+        "name": "string.shader support.type.property-name.shaderlab",
+        "begin": "\"",
+        "end": "\"",
+        "patterns": [
+            {
+                "name": "support.variable.shaderlab",
+                "match": "\\b(Queue|RenderType|DisableBatching|ForceNoShadowCasting|IgnoreProjector|CanUseSpriteAtlas|PreviewType|LightMode|PassFlags)\\b"
+            }
+        ]
+    }
+}
