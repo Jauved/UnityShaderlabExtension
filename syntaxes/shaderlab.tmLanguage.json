@@ -30,6 +30,18 @@
             "include": "#pragma"
         },
         {
+            "include": "#cull-value"
+        },
+        {
+            "include": "#zwrite-value"
+        },
+        {
+            "include": "#ztest-value"
+        },
+        {
+            "include": "#macro"
+        },
+        {
             "name": "support.type.attributename.shaderlab",
             "begin": "(\\[)",
             "end": "(\\])",
@@ -141,6 +153,18 @@
             "name": "support.type.property-name.shaderlab",
             "match": "\"\\b(OnlyDirectional|SoftVegetation)\\b\""
         },
+        "cull-value": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "(?<=Cull\\s*)\\b(Front|Back|Off)\\b"
+        },
+        "zwrite-value": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "(?<=ZWrite\\s*)\\b(On|Off)\\b"
+        },
+        "ztest-value": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "(?<=ZTest\\s*)\\b(Less|Greater|LEqual|GEqual|Equal|NotEqual|Always)\\b"
+        },
         "variable": {
             "patterns": [
                 {
@@ -159,7 +183,7 @@
                     "include": "#pragma-propertyname"
                 },
                 {
-                    "include":"#pragma-propertyvalue"
+                    "include": "#pragma-propertyvalue"
                 }
             ]
         },
@@ -167,9 +191,27 @@
             "name": "support.type.propertyname.shaderlab",
             "match": "(?<=#pragma\\s*)\\b(vertex|fragment|shader_feature|multi_compile_.*|target|exclude_renderers|skip_variants)\\b"
         },
-        "pragma-propertyvalue":{
+        "pragma-propertyvalue": {
             "name": "support.type.property-name.shaderlab",
-            "match":"(?<=#pragma\\s*(vertex|fragment|shader_feature|multi_compile_.*|target|exclude_renderers|skip_variants)\\s*).*"
+            "match": "(?<=#pragma\\s*(vertex|fragment|shader_feature|multi_compile_.*|target|exclude_renderers|skip_variants)\\s*).*"
+        },
+        "macro": {
+            "patterns": [
+                {
+                    "include": "#macro-name"
+                },
+                {
+                    "include":"#macro-source"
+                }
+            ]
+        },
+        "macro-name": {
+            "name": "support.function.shaderlab",
+            "match": "(?<=#define\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        },
+        "macro-source":{
+            "name":"support.function.shaderlab",
+            "match":"(?<=#define\\s*\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
         "hlsl-embedded": {
             "patterns": [

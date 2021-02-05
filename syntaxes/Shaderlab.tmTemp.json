@@ -42,5 +42,9 @@
     "pragma-variable": {
         "name": "support.variable.declaration.shaderlab",
         "match": "(?=#pragma\\s*)\\b.*\\b"
+    },
+    "macro-name": {
+        "name": "variable.function.shaderlab",
+        "match": "(?<=#define\\s*)\\b[a-zA-Z0-9_]*\\b"
     }
 }
