@@ -27,6 +27,9 @@
             "include": "#hlsl-embedded"
         },
         {
+            "include": "#pragma"
+        },
+        {
             "name": "support.type.attributename.shaderlab",
             "begin": "(\\[)",
             "end": "(\\])",
@@ -76,7 +79,7 @@
                 },
                 {
                     "name": "support.type.propertyname.shaderlab",
-                    "match": "\\b(Name|Tags|Fallback|CustomEditor|Cull|ZWrite|ZTest|Offset|Blend|BlendOp|ColorMask|AlphaToMask|LOD|Lighting|Stencil|Ref|ReadMask|WriteMask|Comp|CompBack|CompFront|Fail|ZFail|UsePass|GrabPass|Dependency|Material|Diffuse|Ambient|Shininess|Specular|Emission|Fog|Mode|Density|SeparateSpecular|SetTexture|Combine|ConstantColor|Matrix|AlphaTest|ColorMaterial|BindChannels|Bind)\\b"
+                    "match": "\\b(Name|Tags|Fallback|CustomEditor|Cull|ZWrite|ZTest|Offset|Blend|BlendOp|ColorMask|AlphaToMask|LOD|Lighting|Stencil|Ref|ReadMask|WriteMask|Comp|CompBack|CompFront|Fail|ZFail|UsePass|GrabPass|Dependency|Material|Diffuse|Ambient|Shininess|Specular|Emission|Fog|Mode|Density|SeparateSpecular|SetTexture|Combine|ConstantColor|Matrix|AlphaTest|ColorMaterial|BindChannels|Bind|FallBack)\\b"
                 }
             ]
         },
@@ -102,28 +105,71 @@
             "patterns": [
                 {
                     "name": "support.type.property-name.shaderlab",
-                    "match": "\"\\b(True|False)\\b\""
+                    "match": "\"\\b(True|False|LODFading)\\b\""
                 },
                 {
-                    "include": "#builtin-tag-value-RenderTypes"
+                    "include": "#builtin-tag-subshader-value-RenderType"
+                },
+                {
+                    "include": "#builtin-tag-subshader-value-Queue"
+                },
+                {
+                    "include": "#builtin-tag-pass-value-LightMode"
+                },
+                {
+                    "include": "#builtin-tag-pass-value-Other"
                 }
             ]
         },
-        "builtin-tag-value-RenderTypes": {
+        "builtin-tag-subshader-value-Queue": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "\"\\b(Background|Geometry|AlphaTest|Transparent|Overlay)\\b(\\+|\\-)*[0-9]*\""
+        },
+        "builtin-tag-subshader-value-RenderType": {
             "name": "support.type.property-name.shaderlab",
             "match": "\"\\b(Opaque|Transparent|TransparentCutout|Background|Overlay|TreeOpaque|TreeTransparentCutout|TreeBillboard|Grass|GrassBillboard)\\b\""
+        },
+        "builtin-tag-subshader-value-PreviewType": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "\"\\b(Sphere|Plane|Skybox)\\b\""
+        },
+        "builtin-tag-pass-value-LightMode": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "\"\\b(Always|ForwardBase|ForwardAdd|Deferred|ShadowCaster|MotionVectors|PrepassBase|PrepassFinal|Vertex|VertexLMRGBM|VertexLM|Meta)\\b\""
+        },
+        "builtin-tag-pass-value-Other": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "\"\\b(OnlyDirectional|SoftVegetation)\\b\""
         },
         "variable": {
             "patterns": [
                 {
                     "name": "support.variable.declaration.shaderlab",
-                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*\\("
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()"
                 },
                 {
                     "name": "support.variable.reference.shaderlab",
                     "match": "\\[([a-zA-Z_][a-zA-Z0-9_]*)\\](?!\\s*[a-zA-Z_][a-zA-Z0-9_]*\\s*\\(\")"
                 }
             ]
+        },
+        "pragma": {
+            "patterns": [
+                {
+                    "include": "#pragma-propertyname"
+                },
+                {
+                    "include":"#pragma-propertyvalue"
+                }
+            ]
+        },
+        "pragma-propertyname": {
+            "name": "support.type.propertyname.shaderlab",
+            "match": "(?<=#pragma\\s*)\\b(vertex|fragment|shader_feature|multi_compile_.*|target|exclude_renderers|skip_variants)\\b"
+        },
+        "pragma-propertyvalue":{
+            "name": "support.type.property-name.shaderlab",
+            "match":"(?<=#pragma\\s*(vertex|fragment|shader_feature|multi_compile_.*|target|exclude_renderers|skip_variants)\\s*).*"
         },
         "hlsl-embedded": {
             "patterns": [

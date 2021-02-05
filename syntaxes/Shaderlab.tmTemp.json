@@ -38,5 +38,9 @@
                 "include": "#builtin-tag-values"
             }
         ]
+    },
+    "pragma-variable": {
+        "name": "support.variable.declaration.shaderlab",
+        "match": "(?=#pragma\\s*)\\b.*\\b"
     }
 }
