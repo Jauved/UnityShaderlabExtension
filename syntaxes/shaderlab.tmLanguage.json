@@ -24,16 +24,16 @@
             "include": "#numbers"
         },
         {
-            "name": "meta.attribute.shaderlab",
+            "include": "#hlsl-embedded"
+        },
+        {
+            "name": "support.type.attributename.shaderlab",
             "begin": "(\\[)",
             "end": "(\\])",
             "patterns": [
                 {
                     "name": "support.type.attributename.shaderlab",
                     "match": "\\G([a-zA-Z]+)\\b"
-                },
-                {
-                    "include": "#numbers"
                 }
             ]
         }
@@ -90,16 +90,20 @@
                 }
             ]
         },
-        "strings":{
-            "name":"string.shaderlab",
+        "strings": {
+            "name": "string.shaderlab",
             "match": "(?<!\"\\s*=\\s*)\"[^\"=]*\"(?!\\s*=\\s*\")"
         },
         "builtin-tags": {
             "name": "support.type.propertyname.shaderlab",
-            "match": "\"\\b(Queue|RenderType|DisableBatching|ForceNoShadowCasting|IgnoreProjector|CanUseSpriteAtlas|PreviewType|LightMode|PassFlags)\\b\""
+            "match": "\"\\b(Queue|RenderType|DisableBatching|ForceNoShadowCasting|IgnoreProjector|CanUseSpriteAtlas|PreviewType|LightMode|PassFlags|PerformanceChecks)\\b\""
         },
         "builtin-tag-values": {
             "patterns": [
+                {
+                    "name": "support.type.property-name.shaderlab",
+                    "match": "\"\\b(True|False)\\b\""
+                },
                 {
                     "include": "#builtin-tag-value-RenderTypes"
                 }
@@ -118,6 +122,69 @@
                 {
                     "name": "support.variable.reference.shaderlab",
                     "match": "\\[([a-zA-Z_][a-zA-Z0-9_]*)\\](?!\\s*[a-zA-Z_][a-zA-Z0-9_]*\\s*\\(\")"
+                }
+            ]
+        },
+        "hlsl-embedded": {
+            "patterns": [
+                {
+                    "include": "source.hlsl"
+                },
+                {
+                    "name": "storage.type.basic.shaderlab",
+                    "match": "\\b(fixed([1-4](x[1-4])?)?)\\b"
+                },
+                {
+                    "name": "support.variable.transformations.shaderlab",
+                    "match": "\\b(UNITY_MATRIX_MVP|UNITY_MATRIX_MV|UNITY_MATRIX_M|UNITY_MATRIX_V|UNITY_MATRIX_P|UNITY_MATRIX_VP|UNITY_MATRIX_T_MV|UNITY_MATRIX_I_V|UNITY_MATRIX_IT_MV|_Object2World|_World2Object|unity_ObjectToWorld|unity_WorldToObject)\\b"
+                },
+                {
+                    "name": "support.variable.camera.shaderlab",
+                    "match": "\\b(_WorldSpaceCameraPos|_ProjectionParams|_ScreenParams|_ZBufferParams|unity_OrthoParams|unity_CameraProjection|unity_CameraInvProjection|unity_CameraWorldClipPlanes)\\b"
+                },
+                {
+                    "name": "support.variable.time.shaderlab",
+                    "match": "\\b(_Time|_SinTime|_CosTime|unity_DeltaTime)\\b"
+                },
+                {
+                    "name": "support.variable.lighting.shaderlab",
+                    "match": "\\b(_LightColor0|_WorldSpaceLightPos0|_LightMatrix0|unity_4LightPosX0|unity_4LightPosY0|unity_4LightPosZ0|unity_4LightAtten0|unity_LightColor|_LightColor|unity_LightPosition|unity_LightAtten|unity_SpotDirection)\\b"
+                },
+                {
+                    "name": "support.variable.fog.shaderlab",
+                    "match": "\\b(unity_AmbientSky|unity_AmbientEquator|unity_AmbientGround|UNITY_LIGHTMODEL_AMBIENT|unity_FogColor|unity_FogParams)\\b"
+                },
+                {
+                    "name": "support.variable.various.shaderlab",
+                    "match": "\\b(unity_LODFade)\\b"
+                },
+                {
+                    "name": "support.variable.preprocessor.targetplatform.shaderlab",
+                    "match": "\\b(SHADER_API_D3D9|SHADER_API_D3D11|SHADER_API_GLCORE|SHADER_API_OPENGL|SHADER_API_GLES|SHADER_API_GLES3|SHADER_API_METAL|SHADER_API_D3D11_9X|SHADER_API_PSSL|SHADER_API_XBOXONE|SHADER_API_PSP2|SHADER_API_WIIU|SHADER_API_MOBILE|SHADER_API_GLSL)\\b"
+                },
+                {
+                    "name": "support.variable.preprocessor.targetmodel.shaderlab",
+                    "match": "\\b(SHADER_TARGET)\\b"
+                },
+                {
+                    "name": "support.variable.preprocessor.unityversion.shaderlab",
+                    "match": "\\b(UNITY_VERSION)\\b"
+                },
+                {
+                    "name": "support.variable.preprocessor.platformdifference.shaderlab",
+                    "match": "\\b(UNITY_BRANCH|UNITY_FLATTEN|UNITY_NO_SCREENSPACE_SHADOWS|UNITY_NO_LINEAR_COLORSPACE|UNITY_NO_RGBM|UNITY_NO_DXT5nm|UNITY_FRAMEBUFFER_FETCH_AVAILABLE|UNITY_USE_RGBA_FOR_POINT_SHADOWS|UNITY_ATTEN_CHANNEL|UNITY_HALF_TEXEL_OFFSET|UNITY_UV_STARTS_AT_TOP|UNITY_MIGHT_NOT_HAVE_DEPTH_Texture|UNITY_NEAR_CLIP_VALUE|UNITY_VPOS_TYPE|UNITY_CAN_COMPILE_TESSELLATION|UNITY_COMPILER_HLSL|UNITY_COMPILER_HLSL2GLSL|UNITY_COMPILER_CG|UNITY_REVERSED_Z)\\b"
+                },
+                {
+                    "name": "support.variable.preprocessor.texture2D.shaderlab",
+                    "match": "\\b(UNITY_PASS_FORWARDBASE|UNITY_PASS_FORWARDADD|UNITY_PASS_DEFERRED|UNITY_PASS_SHADOWCASTER|UNITY_PASS_PREPASSBASE|UNITY_PASS_PREPASSFINAL)\\b"
+                },
+                {
+                    "name": "support.class.structures.shaderlab",
+                    "match": "\\b(appdata_base|appdata_tan|appdata_full|appdata_img)\\b"
+                },
+                {
+                    "name": "support.class.surface.shaderlab",
+                    "match": "\\b(SurfaceOutputStandardSpecular|SurfaceOutputStandard|SurfaceOutput|Input)\\b"
                 }
             ]
         }
