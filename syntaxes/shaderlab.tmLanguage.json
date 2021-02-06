@@ -30,13 +30,7 @@
             "include": "#pragma"
         },
         {
-            "include": "#cull-value"
-        },
-        {
-            "include": "#zwrite-value"
-        },
-        {
-            "include": "#ztest-value"
+            "include": "#property"
         },
         {
             "include": "#macro"
@@ -153,6 +147,25 @@
             "name": "support.type.property-name.shaderlab",
             "match": "\"\\b(OnlyDirectional|SoftVegetation)\\b\""
         },
+        "property": {
+            "patterns": [
+                {
+                    "include": "#cull-value"
+                },
+                {
+                    "include": "#zwrite-value"
+                },
+                {
+                    "include": "#lighting-value"
+                },
+                {
+                    "include": "#ztest-value"
+                },
+                {
+                    "include": "#colormask-value"
+                }
+            ]
+        },
         "cull-value": {
             "name": "support.type.property-name.shaderlab",
             "match": "(?<=Cull\\s*)\\b(Front|Back|Off)\\b"
@@ -161,15 +174,23 @@
             "name": "support.type.property-name.shaderlab",
             "match": "(?<=ZWrite\\s*)\\b(On|Off)\\b"
         },
+        "lighting-value": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "(?<=Lighting\\s*)\\b(On|Off)\\b"
+        },
         "ztest-value": {
             "name": "support.type.property-name.shaderlab",
             "match": "(?<=ZTest\\s*)\\b(Less|Greater|LEqual|GEqual|Equal|NotEqual|Always)\\b"
+        },
+        "colormask-value":{
+            "name": "support.type.property-name.shaderlab",
+            "match":"(?<=ColorMask\\s*)\\b([RGBA][GBA]?[BA]?[A]?)\\b"
         },
         "variable": {
             "patterns": [
                 {
                     "name": "support.variable.declaration.shaderlab",
-                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()"
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()\\b"
                 },
                 {
                     "name": "support.variable.reference.shaderlab",
@@ -201,7 +222,7 @@
                     "include": "#macro-name"
                 },
                 {
-                    "include":"#macro-source"
+                    "include": "#macro-source"
                 }
             ]
         },
@@ -209,9 +230,9 @@
             "name": "support.function.shaderlab",
             "match": "(?<=#define\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
-        "macro-source":{
-            "name":"support.function.shaderlab",
-            "match":"(?<=#define\\s*\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        "macro-source": {
+            "name": "support.function.shaderlab",
+            "match": "(?<=#define\\s*\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
         "hlsl-embedded": {
             "patterns": [
