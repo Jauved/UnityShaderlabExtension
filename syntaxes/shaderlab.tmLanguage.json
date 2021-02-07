@@ -40,7 +40,7 @@
         },
         {
             "name": "support.type.attributename.shaderlab",
-            "begin": "(\\G\\[)",
+            "begin": "(^\\s*\\[)",
             "end": "(\\])",
             "patterns": [
                 {
