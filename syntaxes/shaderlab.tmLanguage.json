@@ -163,6 +163,9 @@
                 },
                 {
                     "include": "#colormask-value"
+                },
+                {
+                    "include": "#blend-value"
                 }
             ]
         },
@@ -185,6 +188,10 @@
         "colormask-value":{
             "name": "support.type.property-name.shaderlab",
             "match":"(?<=ColorMask\\s*)\\b([RGBA][GBA]?[BA]?[A]?)\\b"
+        },
+        "blend-value":{
+            "name": "support.type.property-name.shaderlab",
+            "match":"(?<=Blend\\s*[0-7]?\\s*)((\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b((,\\s*)?\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b)?)|Off)"
         },
         "variable": {
             "patterns": [
