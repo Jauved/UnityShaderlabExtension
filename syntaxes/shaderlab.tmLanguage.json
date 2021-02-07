@@ -36,8 +36,11 @@
             "include": "#macro"
         },
         {
+            "include":"#cbuffer-pair"
+        },
+        {
             "name": "support.type.attributename.shaderlab",
-            "begin": "(\\[)",
+            "begin": "(\\G\\[)",
             "end": "(\\])",
             "patterns": [
                 {
@@ -52,7 +55,7 @@
             "patterns": [
                 {
                     "name": "constant.numeric.shaderlab",
-                    "match": "\\b([0-9]+\\.?[0-9]*)\\b"
+                    "match": "\\b([1-9]e|[0-9]+\\.?[0-9]*)\\b"
                 }
             ]
         },
@@ -124,6 +127,9 @@
                 },
                 {
                     "include": "#builtin-tag-pass-value-Other"
+                },
+                {
+                    "include": "#builtin-tag-subshader-value-PreviewType"
                 }
             ]
         },
@@ -185,19 +191,19 @@
             "name": "support.type.property-name.shaderlab",
             "match": "(?<=ZTest\\s*)\\b(Less|Greater|LEqual|GEqual|Equal|NotEqual|Always)\\b"
         },
-        "colormask-value":{
+        "colormask-value": {
             "name": "support.type.property-name.shaderlab",
-            "match":"(?<=ColorMask\\s*)\\b([RGBA][GBA]?[BA]?[A]?)\\b"
+            "match": "(?<=ColorMask\\s*)\\b([RGBA][GBA]?[BA]?[A]?)\\b"
         },
-        "blend-value":{
+        "blend-value": {
             "name": "support.type.property-name.shaderlab",
-            "match":"(?<=Blend\\s*[0-7]?\\s*)((\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b((,\\s*)?\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b)?)|Off)"
+            "match": "(?<=Blend\\s*[0-7]?\\s*)((\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b((,\\s*)?\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b)?)|Off)"
         },
         "variable": {
             "patterns": [
                 {
                     "name": "support.variable.declaration.shaderlab",
-                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*\\()\\b"
+                    "match": "\\b([_][a-zA-Z0-9_]*)"
                 },
                 {
                     "name": "support.variable.reference.shaderlab",
@@ -230,16 +236,27 @@
                 },
                 {
                     "include": "#macro-source"
+                },
+                {
+                    "include": "#macro-define"
                 }
             ]
         },
         "macro-name": {
             "name": "support.function.shaderlab",
-            "match": "(?<=#define\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+            "match": "(?<=(#define|#if(n?)def|#undef|#if|if)\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
         "macro-source": {
+            "name": "support.variable.reference.shaderlab",
+            "match": "(?<=(#define|#if(n)def|#undef|#if|if)\\s*\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        },
+        "macro-define":{
+            "name": "support.variable.reference.shaderlab",
+            "match":"(?<=defined\\s*[(])\\b([a-zA-Z0-9_]*)\\b(?=[)])"
+        },
+        "cbuffer-pair":{
             "name": "support.function.shaderlab",
-            "match": "(?<=#define\\s*\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+            "match":"(GLOBAL_)?CBUFFER_(START|END)"
         },
         "hlsl-embedded": {
             "patterns": [
@@ -252,7 +269,7 @@
                 },
                 {
                     "name": "support.variable.transformations.shaderlab",
-                    "match": "\\b(UNITY_MATRIX_MVP|UNITY_MATRIX_MV|UNITY_MATRIX_M|UNITY_MATRIX_V|UNITY_MATRIX_P|UNITY_MATRIX_VP|UNITY_MATRIX_T_MV|UNITY_MATRIX_I_V|UNITY_MATRIX_IT_MV|_Object2World|_World2Object|unity_ObjectToWorld|unity_WorldToObject)\\b"
+                    "match": "\\b(UNITY_MATRIX_MVP|UNITY_MATRIX_MV|UNITY_MATRIX_M|UNITY_MATRIX_V|UNITY_MATRIX_P|UNITY_MATRIX_VP|UNITY_MATRIX_T_MV|UNITY_MATRIX_I_V|UNITY_MATRIX_IT_MV|_Object2World|_World2Object|unity_ObjectToWorld|unity_WorldToObject|unity_WorldToLight|unity_WorldToShadow|unity_ShadowSplitSpheres|unity_ShadowSplitSqRadii|unity_LightShadowBias|unity_ShadowFadeCenterAndType|unity_WorldTransformParams|unity_RenderingLayer|unity_LightColor[0-3]|unity_SH[A-C][rgb]?|unity_WorldToCamera|unity_CameraToWorld|unity_HalfStereoSeparation|unity_OcclusionMaskSelector|unity_ProbesOcclusion|glstate_matrix_transpose_modelview0|glstate_lightmodel_ambient|unity_IndirectSpecColor|unity_ShadowColor|unity_LightmapST|unity_DynamicLightmapST|unity_SpecCube[0-1]_[a-zA-Z]*|unity_ProbeVolume[a-zA-Z]*|unity_MatrixMVP|unity_MatrixMV|unity_MatrixTMV|unity_MatrixITMV|unity_MatrixVP|unity_MatrixV|unity_MatrixInvV|glstate_matrix_projection)\\b"
                 },
                 {
                     "name": "support.variable.camera.shaderlab",
