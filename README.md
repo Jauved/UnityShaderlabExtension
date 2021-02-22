@@ -1,10 +1,11 @@
 # unityshaderlab README
 
-This is the README for your extension "unityshaderlab". After writing up a brief description, we recommend including the following sections.
+此插件为了方便Unity内置管线着色器编写而制作.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+提供关键字高亮;
+提供智能补全.
 
 For example if there is an image subfolder under your extension project workspace:
 
@@ -14,7 +15,7 @@ For example if there is an image subfolder under your extension project workspac
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+--
 
 ## Extension Settings
 
@@ -37,15 +38,15 @@ Users appreciate release notes as you update your extension.
 
 ### 1.0.0
 
-Initial release of ...
+Initial release.
 
 ### 1.0.1
 
-Fixed issue #.
+更新关键词高亮.
 
-### 1.1.0
+### 1.0.2
 
-Added features X, Y, and Z.
+更新部分属性智能补全.
 
 -----------------------------------------------------------------------------------------------------------
 
