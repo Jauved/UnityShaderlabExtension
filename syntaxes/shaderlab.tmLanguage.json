@@ -36,7 +36,7 @@
             "include": "#macro"
         },
         {
-            "include":"#cbuffer-pair"
+            "include": "#cbuffer-pair"
         },
         {
             "name": "support.type.attributename.shaderlab",
@@ -250,13 +250,13 @@
             "name": "support.variable.reference.shaderlab",
             "match": "(?<=(#define|#if(n)def|#undef|#if|if)\\s*\\b[a-zA-Z_][a-zA-Z0-9_]*\\b\\s*)\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
-        "macro-define":{
+        "macro-define": {
             "name": "support.variable.reference.shaderlab",
-            "match":"(?<=defined\\s*[(])\\b([a-zA-Z0-9_]*)\\b(?=[)])"
+            "match": "(?<=defined\\s*[(])\\b([a-zA-Z0-9_]*)\\b(?=[)])"
         },
-        "cbuffer-pair":{
+        "cbuffer-pair": {
             "name": "support.function.shaderlab",
-            "match":"(GLOBAL_)?CBUFFER_(START|END)"
+            "match": "(GLOBAL_)?CBUFFER_(START|END)"
         },
         "hlsl-embedded": {
             "patterns": [

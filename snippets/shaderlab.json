@@ -1,7 +1,7 @@
 {
     "Shader Built-in Main": {
         "prefix": "Shader",
-        "body":[
+        "body": [
             "Shader \"${1:StarUnion}/${2:SubName}/${3:Name}\"",
             "{",
             "\tProperties",
@@ -23,5 +23,71 @@
             "}"
         ],
         "description": "Shader Title"
+    },
+    "Texture Main": {
+        "prefix": "TextureMain",
+        "body": "_${1:MainTex}(\"${2|Albedo,Main Texture|}\", 2D) = \"${3|white,black,gray|}\" {}$0",
+        "description": "Main Texture"
+    },
+    "Texture Bump": {
+        "prefix": "TextureBump",
+        "body": "[Normal] _${1:BumpMap}(\"Normal Map\", 2D) = \"bump\" {}$0",
+        "description": "Bump Map"
+    },
+    "Texture SP": {
+        "prefix": "TextureSP",
+        "body": "_${1:SPMap}(\"${2:Name}\", ${3:|3D,Cube|) = \"\" {}$0",
+        "description": "Bump Map"
+    },
+    "Color": {
+        "prefix": "Color",
+        "body": "_${1:Color}(\"${2:Name}\", Color) = (${3|1\\,1\\,1\\,1,0\\,0\\,0\\,0,0.5\\,0.5\\,0.5\\,0.5|})$0",
+        "description": "Color"
+    },
+    "Vector": {
+        "prefix": "Vector",
+        "body": "_${1:Vector}(\"${2:Name}\", Vector) = (${3|0\\,0\\,0\\,0,1\\,1\\,1\\,1,0.5\\,0.5\\,0.5\\,0.5|})$0",
+        "description": "Vector"
+    },
+    "Range": {
+        "prefix": "Range",
+        "body": "_${1:Range}(\"${2:Range}\", Range(${3:Min}, ${4:Max})) = ${5:DefaultValue}$0",
+        "description": "Range"
+    },
+    "Float": {
+        "prefix": "Float",
+        "body": "_${1:Name}(\"${2:Name}\", Float) = ${3:DefaultValue}$0",
+        "description": "Float"
+    },
+    "Int": {
+        "prefix": "Int",
+        "body": "_${1:Name}(\"${2:Name}\", Int) = ${3:DefaultValue}$0",
+        "description": "Int"
+    },
+    "Property Attributes": {
+        "prefix": "Attributes",
+        "body": "[${1|HDR,PerRendererData,Gamma,HideInInspector,NoScaleOffset,NonModifiableTextureData|}] $0",
+        "description": "Property Attributes"
+    },
+    "Property Drawers": {
+        "prefix": "Drawers",
+        "body": "[${1|Toggle,ToggleOff,Enum(),KeywordEnum(),PowerSlider(),IntRange|}] $0",
+        "description": "Property Drawers"
+    },
+    "Property Decorator Space": {
+        "prefix":"Space",
+        "body": "[${1:Space}] $0",
+        "description":"Property Decorator Space"
+    },
+    "Property Decorator Space()": {
+        "prefix":"Space()",
+        "body": "[Space(${1:20})] $0",
+        "description":"Property Decorator Space()"
+    },
+
+    "Property Decorator Header": {
+        "prefix":"Header",
+        "body": "[Header(${1:Header})] $0",
+        "description":"Property Decorator Header"
     }
 }
