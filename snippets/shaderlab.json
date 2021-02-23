@@ -10,8 +10,10 @@
             "\t}",
             "\tCategory",
             "\t{",
+            "\t\t",
             "\t\tSubShader",
             "\t\t{",
+            "\t\t",
             "\t\t\tPass",
             "\t\t\t{",
             "\t\t\t\tCGPROGRAM",
@@ -26,7 +28,7 @@
     },
     "Texture Main": {
         "prefix": "TextureMain",
-        "body": "_${1:MainTex}(\"${2|Albedo,Main Texture|}\", 2D) = \"${3|white,black,gray|}\" {}$0",
+        "body": "_${1:MainTex}(\"${2:Main Texture}\", 2D) = \"${3|white,black,gray|}\" {}$0",
         "description": "Main Texture"
     },
     "Texture Bump": {
@@ -64,30 +66,144 @@
         "body": "_${1:Name}(\"${2:Name}\", Int) = ${3:DefaultValue}$0",
         "description": "Int"
     },
+    "Cull Mode": {
+        "prefix": "CullMode",
+        "body": "[Enum(UnityEngine.Rendering.CullMode)] _Cull(\"${1:Cull Mode}\", Int) = ${2:1}$0",
+        "description": "Cull Mode Enum"
+    },
+    "SrcBlend Mode": {
+        "prefix": "SrcMode",
+        "body": "[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend(\"${1:SrcBlend Mode}\", Int) = ${2:1}$0",
+        "description": "Blend Mode Enum"
+    },
+    "DstBlend Mode": {
+        "prefix": "DstMode",
+        "body": "[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend(\"${1:DstBlend Mode}\", Int) = ${2:1}$0",
+        "description": "Blend Mode Enum"
+    },
+    "ZWrite Mode": {
+        "prefix": "ZWriteMode",
+        "body": "[Enum(Off, 0, On, 1)] _ZWrite(\"ZWrite\", Int) = ${1:1}$0",
+        "description": "ZWrite Mode Enum"
+    },
+    "ZTest Mode": {
+        "prefix": "ZTestMode",
+        "body": "[Enum(UnityEngine.Rendering.CompareFunction)] _ZTest(\"ZTest\", Int) = ${1:5}$0",
+        "description": "ZTest Mode Enum"
+    },
     "Property Attributes": {
         "prefix": "Attributes",
-        "body": "[${1|HDR,PerRendererData,Gamma,HideInInspector,NoScaleOffset,NonModifiableTextureData|}] $0",
+        "body": "[${1|HDR,PerRendererData,Gamma,HideInInspector,NoScaleOffset,NonModifiableTextureData|}]$0",
         "description": "Property Attributes"
+    },
+    "Attributes HDR": {
+        "prefix": "HDR",
+        "body": "HDR$0",
+        "description": "Attributes HDR"
+    },
+    "Attributes PerRendererData": {
+        "prefix": "PerRendererData",
+        "body": "PerRendererData$0",
+        "description": "Attributes PerRendererData"
+    },
+    "Attributes Gamma": {
+        "prefix": "Gamma",
+        "body": "Gamma$0",
+        "description": "Attributes Gamma"
+    },
+    "Attributes HideInInspector": {
+        "prefix": "HideInInspector",
+        "body": "HideInInspector$0",
+        "description": "Attributes HideInInspector"
+    },
+    "Attributes NoScaleOffset": {
+        "prefix": "NoScaleOffset",
+        "body": "NoScaleOffset$0",
+        "description": "Attributes NoScaleOffset"
+    },
+    "Attributes NonModifiableTextureData": {
+        "prefix": "NonModifiableTextureData",
+        "body": "NonModifiableTextureData$0",
+        "description": "Attributes NonModifiableTextureData"
     },
     "Property Drawers": {
         "prefix": "Drawers",
         "body": "[${1|Toggle,ToggleOff,Enum(),KeywordEnum(),PowerSlider(),IntRange|}] $0",
         "description": "Property Drawers"
     },
+    "Drawers Toggle": {
+        "prefix": "Toggle",
+        "body": "${1|Toggle,ToggleOff|}$0",
+        "description": "Property Toggle"
+    },
+    "Drawers Enum": {
+        "prefix": "Enum",
+        "body": "Enum($1)$0",
+        "description": "Property Enum"
+    },
+    "Drawers KeywordEnum": {
+        "prefix": "KeywordEnum",
+        "body": "KeywordEnum($1)$0",
+        "description": "Property KeywordEnum"
+    },
     "Property Decorator Space": {
-        "prefix":"Space",
-        "body": "[${1:Space}] $0",
-        "description":"Property Decorator Space"
+        "prefix": "Space",
+        "body": "Space$0",
+        "description": "Property Decorator Space"
     },
     "Property Decorator Space()": {
-        "prefix":"Space()",
-        "body": "[Space(${1:20})] $0",
-        "description":"Property Decorator Space()"
+        "prefix": "Space()",
+        "body": "Space(${1:20})$0",
+        "description": "Property Decorator Space()"
     },
-
     "Property Decorator Header": {
-        "prefix":"Header",
-        "body": "[Header(${1:Header})] $0",
-        "description":"Property Decorator Header"
+        "prefix": "Header",
+        "body": "Header(${1:Header})$0",
+        "description": "Property Decorator Header"
+    },
+    "Tags Min": {
+        "prefix": "TagsMin",
+        "body": "Tags { $0 }",
+        "description": "Tags"
+    },
+    "Tags All": {
+        "prefix": "TagsAll",
+        "body": "Tags { \"Queue\"=\"${1|Geometry,Transparent,Background,AlphaTest,Overlay|}\" \"RenderType\"=\"${2|Opaque,Transparent,Background,Overlay|}\" \"DisableBatching\"=\"${3|False,True|}\" $4}$0",
+        "description": "Tags All"
+    },
+    "Tags ForceNoShadowCasting": {
+        "prefix": "TagsForceNoShadowCasting",
+        "body": "\"ForceNoShadowCasting\"=\"True\" $0",
+        "description": "Tags ForceNoShadowCasting"
+    },
+    "Tags IgnoreProjector": {
+        "prefix": "TagsIgnoreProjector",
+        "body": "\"IgnoreProjector\"=\"True\" $0",
+        "description": "Tags IgnoreProjector"
+    },
+    "Tags CanUseSpriteAtlas": {
+        "prefix": "TagsCanUseSpriteAtlas",
+        "body": "\"CanUseSpriteAtlas\"=\"True\" $0",
+        "description": "Tags CanUseSpriteAtlas"
+    },
+    "Tags PreviewType": {
+        "prefix": "TagsPreviewType",
+        "body": "\"PreviewType\"=\"${1|Plane,Skybox|}\" $0",
+        "description": "Tags PreviewType"
+    },
+    "Tags Queue": {
+        "prefix": "TagsQueue",
+        "body": "\"Queue\"=\"${1|Geometry,Transparent,Background,AlphaTest,Overlay|}\" $0",
+        "description": "Tags Queue"
+    },
+    "Tags RenderType": {
+        "prefix": "TagsRenderType",
+        "body": "\"RenderType\"=\"${1|Opaque,Transparent,Background,Overlay|}\" $0",
+        "description": "Tags RenderType"
+    },
+    "Tags DisableBatching": {
+        "prefix": "TagsDisableBatching",
+        "body": "\"DisableBatching\"=\"${1|False,True|}\" $0",
+        "description": "Tags DisableBatching"
     }
 }
