@@ -233,7 +233,7 @@
     },
     "Render State Cull": {
         "prefix": "Cull",
-        "body": "Cull ${1|Back,Front,Off|}\n$0",
+        "body": "Cull ${1|[_Cull],Back,Front,Off|}\n$0",
         "description": "Render State Cull"
     },
     "Render State ZTest":{
