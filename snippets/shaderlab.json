@@ -211,6 +211,16 @@
         "body": "\"DisableBatching\"=\"${1|False,True|}\" $0",
         "description": "Tags DisableBatching"
     },
+    "Pass Tags LightMode": {
+        "prefix": "LightMode",
+        "body": "\"LightMode\" = \"${1|Always,ForwardBase,ForwardAdd,ShadowCaster,Vertex,VertexLM,Deferred,MotionVectors,PrepassBase,PrepassFinal,VertexLMRGBM|}\"\n$0",
+        "description": "Pass Tags LightMode"
+    },
+    "Pass Tags ForwardBase PassFlags": {
+        "prefix": "PassFlags",
+        "body": "\"PassFlags\" = \"OnlyDirectional\"",
+        "description": "Pass Tags ForwardBase PassFlags"
+    },
     "Pass Name": {
         "prefix": "Name",
         "body": "Name \"${1:NAME}\"\n$0",
@@ -236,19 +246,19 @@
         "body": "Cull ${1|[_Cull],Back,Front,Off|}\n$0",
         "description": "Render State Cull"
     },
-    "Render State ZTest":{
-        "prefix":"ZTest",
-        "body":"ZTest ${1|LEqual,Less,Greater,GEqual,Equal,NotEqual,Always|}\n$0",
-        "description":"Render State ZTest"
+    "Render State ZTest": {
+        "prefix": "ZTest",
+        "body": "ZTest ${1|LEqual,Less,Greater,GEqual,Equal,NotEqual,Always|}\n$0",
+        "description": "Render State ZTest"
     },
-    "Render State Offset":{
-        "prefix":"Offset",
-        "body":"Offset ${1:0}, ${2:0}\n$0",
-        "description":"Render State Offset"
+    "Render State Offset": {
+        "prefix": "Offset",
+        "body": "Offset ${1:0}, ${2:0}\n$0",
+        "description": "Render State Offset"
     },
-    "Render State AlphaToMask":{
-        "prefix":"AlphaToMask",
-        "body":"AlphaToMask ${1:On}\n$0",
-        "description":"Render State AlphaToMask"
+    "Render State AlphaToMask": {
+        "prefix": "AlphaToMask",
+        "body": "AlphaToMask ${1:On}\n$0",
+        "description": "Render State AlphaToMask"
     }
 }
