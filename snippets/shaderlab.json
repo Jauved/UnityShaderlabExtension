@@ -221,9 +221,9 @@
         "body": "\"PassFlags\" = \"OnlyDirectional\" $0",
         "description": "Pass Tags ForwardBase PassFlags"
     },
-    "Pass Tags RequireOptions":{
-        "prefix":"RequireOptions",
-        "body":"\"RequireOptions\" = \"SoftVegetation\" $0"
+    "Pass Tags RequireOptions": {
+        "prefix": "RequireOptions",
+        "body": "\"RequireOptions\" = \"SoftVegetation\" $0"
     },
     "Pass Name": {
         "prefix": "Name",
@@ -264,5 +264,21 @@
         "prefix": "AlphaToMask",
         "body": "AlphaToMask ${1:On}\n$0",
         "description": "Render State AlphaToMask"
+    },
+    "Pass Stencil": {
+        "prefix": "Stencil",
+        "body": [
+            "Stencil",
+            "{",
+            "\tRef ${1:0}",
+            "\tReadMask ${2:255}",
+            "\tWriteMask ${3:255}",
+            "\tComp ${4|Always,Greater,GEqual,Less,LEqual,Equal,NotEqual,Never|}",
+            "\tPass ${5|Keep,Zero,Replace,IncrSat,DecrSat,Invert,IncrWrap,DecrWrap|}",
+            "\tFail ${6|Keep,Zero,Replace,IncrSat,DecrSat,Invert,IncrWrap,DecrWrap|}",
+            "\tZFail ${7|Keep,Zero,Replace,IncrSat,DecrSat,Invert,IncrWrap,DecrWrap|}",
+            "}$0"
+        ],
+        "description":"Pass Stencil"
     }
 }
