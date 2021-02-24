@@ -240,5 +240,10 @@
         "prefix":"ZTest",
         "body":"ZTest ${1|LEqual,Less,Greater,GEqual,Equal,NotEqual,Always|}\n$0",
         "description":"Render State ZTest"
+    },
+    "Render State Offset":{
+        "prefix":"Offset",
+        "body":"Offset ${1:0}, ${2:0}\n$0",
+        "description":"Render State Offset"
     }
 }
