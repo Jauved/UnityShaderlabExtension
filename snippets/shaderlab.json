@@ -66,18 +66,18 @@
         "body": "_${1:Name}(\"${2:Name}\", Int) = ${3:DefaultValue}$0",
         "description": "Int"
     },
-    "Cull Mode": {
-        "prefix": "CullMode",
+    "Cull Prop": {
+        "prefix": "CullProp",
         "body": "[Enum(UnityEngine.Rendering.CullMode)] _Cull(\"${1:Cull Mode}\", Int) = ${2:1}$0",
         "description": "Cull Mode Enum"
     },
-    "SrcBlend Mode": {
-        "prefix": "SrcBlendMode",
+    "SrcBlend Prop": {
+        "prefix": "SrcBlendProp",
         "body": "[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend(\"${1:SrcBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
-    "DstBlend Mode": {
-        "prefix": "DstBlendMode",
+    "DstBlend Prop": {
+        "prefix": "DstBlendProp",
         "body": "[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend(\"${1:DstBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
@@ -86,13 +86,13 @@
         "body": "[Enum(UnityEngine.Rendering.BlendOp)] _BlendOp(\"${1:DstBlend Op}\", Int) = ${2:1}$0",
         "description": "Blend Op"
     },
-    "ZWrite Mode": {
-        "prefix": "ZWriteMode",
+    "ZWrite Prop": {
+        "prefix": "ZWriteProp",
         "body": "[Enum(Off, 0, On, 1)] _ZWrite(\"ZWrite\", Int) = ${1:1}$0",
         "description": "ZWrite Mode Enum"
     },
-    "ZTest Mode": {
-        "prefix": "ZTestMode",
+    "ZTest Prop": {
+        "prefix": "ZTestProp",
         "body": "[Enum(UnityEngine.Rendering.CompareFunction)] _ZTest(\"ZTest\", Int) = ${1:5}$0",
         "description": "ZTest Mode Enum"
     },
@@ -235,5 +235,10 @@
         "prefix": "Cull",
         "body": "Cull ${1|Back,Front,Off|}\n$0",
         "description": "Render State Cull"
+    },
+    "Render State ZTest":{
+        "prefix":"ZTest",
+        "body":"ZTest ${1|LEqual,Less,Greater,GEqual,Equal,NotEqual,Always|}\n$0",
+        "description":"Render State ZTest"
     }
 }
