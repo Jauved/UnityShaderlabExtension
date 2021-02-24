@@ -213,13 +213,17 @@
     },
     "Pass Tags LightMode": {
         "prefix": "LightMode",
-        "body": "\"LightMode\" = \"${1|Always,ForwardBase,ForwardAdd,ShadowCaster,Vertex,VertexLM,Deferred,MotionVectors,PrepassBase,PrepassFinal,VertexLMRGBM|}\"\n$0",
+        "body": "\"LightMode\" = \"${1|Always,ForwardBase,ForwardAdd,ShadowCaster,Vertex,VertexLM,Deferred,MotionVectors,PrepassBase,PrepassFinal,VertexLMRGBM|}\" $0",
         "description": "Pass Tags LightMode"
     },
     "Pass Tags ForwardBase PassFlags": {
         "prefix": "PassFlags",
-        "body": "\"PassFlags\" = \"OnlyDirectional\"",
+        "body": "\"PassFlags\" = \"OnlyDirectional\" $0",
         "description": "Pass Tags ForwardBase PassFlags"
+    },
+    "Pass Tags RequireOptions":{
+        "prefix":"RequireOptions",
+        "body":"\"RequireOptions\" = \"SoftVegetation\" $0"
     },
     "Pass Name": {
         "prefix": "Name",
