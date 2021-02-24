@@ -81,6 +81,11 @@
         "body": "[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend(\"${1:DstBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
+    "Blend OP": {
+        "prefix": "BlendOP",
+        "body": "[Enum(UnityEngine.Rendering.BlendOp)] _BlendOp(\"${1:DstBlend Op}\", Int) = ${2:1}$0",
+        "description": "Blend Op"
+    },
     "ZWrite Mode": {
         "prefix": "ZWriteMode",
         "body": "[Enum(Off, 0, On, 1)] _ZWrite(\"ZWrite\", Int) = ${1:1}$0",
@@ -212,23 +217,23 @@
         "description": "Pass Name"
     },
     "Render State Blend Option": {
-        "prefix":"StateBlend",
-        "body":"Blend ${1|SrcAlpha,One,Zero,SrcColor,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|} ${2|OneMinusSrcAlpha,One,Zero,SrcColor,SrcAlpha,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|}\n$0",
-        "description":"Render state Blend Option"
+        "prefix": "StateBlend",
+        "body": "Blend ${1|[_SrcBlend],SrcAlpha,One,Zero,SrcColor,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|} ${2|[DstBlend],OneMinusSrcAlpha,One,Zero,SrcColor,SrcAlpha,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|}\n$0",
+        "description": "Render state Blend Option"
     },
-    "Render State Blend Operator":{
-        "prefix":"StateBlendOP",
-        "body":"BlendOp ${1|Add,Sub,RevSub,Min,Max|}\n$0",
-        "description":"Render State Blend Operator"
+    "Render State Blend Operator": {
+        "prefix": "StateBlendOP",
+        "body": "BlendOp ${1|Add,Sub,RevSub,Min,Max|}\n$0",
+        "description": "Render State Blend Operator"
     },
-    "Render State ColorMask":{
-        "prefix":"ColorMask",
-        "body":"ColorMask $0",
-        "description":"Render State Color Mask"
+    "Render State ColorMask": {
+        "prefix": "ColorMask",
+        "body": "ColorMask $0",
+        "description": "Render State Color Mask"
     },
-    "Render State Cull":{
-        "prefix":"Cull",
-        "body":"Cull ${1|Back,Front,Off|}$0",
-        "description":"Render State Cull"
+    "Render State Cull": {
+        "prefix": "Cull",
+        "body": "Cull ${1|Back,Front,Off|}$0",
+        "description": "Render State Cull"
     }
 }
