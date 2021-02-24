@@ -280,5 +280,20 @@
             "}$0"
         ],
         "description":"Pass Stencil"
+    },
+    "Pass Stencil Ref":{
+        "prefix":"Ref",
+        "body":"Ref ${1:0}$0",
+        "description":"Stencil Ref 0-255"
+    },
+    "Pass Stencil ReadMask":{
+        "prefix":"ReadMask",
+        "body":"ReadMask ${1:255}$0",
+        "description":"Stencil ReadMask Default 255"
+    },
+    "Pass Stencil WriteMask":{
+        "prefix":"WriteMask",
+        "body":"WriteMask ${1:255}$0",
+        "description":"Stencil WriteMask Default 255"
     }
 }
