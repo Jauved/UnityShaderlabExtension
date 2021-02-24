@@ -222,8 +222,8 @@
         "description": "Render state Blend Option"
     },
     "Render State Blend Operator": {
-        "prefix": "StateBlendOP",
-        "body": "BlendOp ${1|Add,Sub,RevSub,Min,Max|}\n$0",
+        "prefix": "StateBlendOp",
+        "body": "BlendOp ${1|[_BlendOp],Add,Sub,RevSub,Min,Max|}\n$0",
         "description": "Render State Blend Operator"
     },
     "Render State ColorMask": {
