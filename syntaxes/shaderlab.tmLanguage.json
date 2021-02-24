@@ -172,6 +172,9 @@
                 },
                 {
                     "include": "#blend-value"
+                },
+                {
+                    "include": "#blendop-value"
                 }
             ]
         },
@@ -198,6 +201,10 @@
         "blend-value": {
             "name": "support.type.property-name.shaderlab",
             "match": "(?<=Blend\\s*[0-7]?\\s*)((\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b((,\\s*)?\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b\\s*\\b(One|Zero|ScrColor|SrcAlpha|DstColor|DstAlpha|OneMinusSrcColor|OneMinusSrcAlpha|OneMinusDstColor|OneMinusDstAlpha)\\b)?)|Off)"
+        },
+        "blendop-value": {
+            "name": "support.type.property-name.shaderlab",
+            "match": "(?<=BlendOp\\s*[0-7]?\\s*)\\b(Add|Sub|RevSub|Min|Max)\\b,?(\\b(Add|Sub|RevSub|Min|Max)\\b)?"
         },
         "variable": {
             "patterns": [
