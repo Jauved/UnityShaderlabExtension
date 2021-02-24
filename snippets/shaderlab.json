@@ -225,5 +225,10 @@
         "prefix":"ColorMask",
         "body":"ColorMask $0",
         "description":"Render State Color Mask"
+    },
+    "Render State Cull":{
+        "prefix":"Cull",
+        "body":"Cull ${1|Back,Front,Off|}$0",
+        "description":"Render State Cull"
     }
 }
