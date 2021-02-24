@@ -245,5 +245,10 @@
         "prefix":"Offset",
         "body":"Offset ${1:0}, ${2:0}\n$0",
         "description":"Render State Offset"
+    },
+    "Render State AlphaToMask":{
+        "prefix":"AlphaToMask",
+        "body":"AlphaToMask ${1:On}\n$0",
+        "description":"Render State AlphaToMask"
     }
 }
