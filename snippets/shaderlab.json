@@ -211,14 +211,19 @@
         "body": "Name \"${1:NAME}\"\n$0",
         "description": "Pass Name"
     },
-    "Render state Blend Option": {
+    "Render State Blend Option": {
         "prefix":"StateBlend",
         "body":"Blend ${1|SrcAlpha,One,Zero,SrcColor,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|} ${2|OneMinusSrcAlpha,One,Zero,SrcColor,SrcAlpha,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|}\n$0",
         "description":"Render state Blend Option"
     },
-    "Render state Blend Operator":{
+    "Render State Blend Operator":{
         "prefix":"StateBlendOP",
         "body":"BlendOp ${1|Add,Sub,RevSub,Min,Max|}\n$0",
-        "description":"Render state Blend Operator"
+        "description":"Render State Blend Operator"
+    },
+    "Render State ColorMask":{
+        "prefix":"ColorMask",
+        "body":"ColorMask $0",
+        "description":"Render State Color Mask"
     }
 }
