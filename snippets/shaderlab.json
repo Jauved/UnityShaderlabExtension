@@ -72,12 +72,12 @@
         "description": "Cull Mode Enum"
     },
     "SrcBlend Mode": {
-        "prefix": "SrcMode",
+        "prefix": "SrcBlendMode",
         "body": "[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend(\"${1:SrcBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
     "DstBlend Mode": {
-        "prefix": "DstMode",
+        "prefix": "DstBlendMode",
         "body": "[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend(\"${1:DstBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
@@ -205,5 +205,20 @@
         "prefix": "TagsDisableBatching",
         "body": "\"DisableBatching\"=\"${1|False,True|}\" $0",
         "description": "Tags DisableBatching"
+    },
+    "Pass Name": {
+        "prefix": "Name",
+        "body": "Name \"${1:NAME}\"\n$0",
+        "description": "Pass Name"
+    },
+    "Render state Blend Option": {
+        "prefix":"StateBlend",
+        "body":"Blend ${1|SrcAlpha,One,Zero,SrcColor,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|} ${2|OneMinusSrcAlpha,One,Zero,SrcColor,SrcAlpha,DstColor,DstAlpha,OneMinusSrcColor,OneMinusSrcAlpha,OneMinusDstColor,OneMinusDstAlpha|}\n$0",
+        "description":"Render state Blend Option"
+    },
+    "Render state Blend Operator":{
+        "prefix":"StateBlendOP",
+        "body":"BlendOp ${1|Add,Sub,RevSub,Min,Max|}\n$0",
+        "description":"Render state Blend Operator"
     }
 }
