@@ -185,52 +185,52 @@
     },
     "Tags ForceNoShadowCasting": {
         "prefix": "TagsForceNoShadowCasting",
-        "body": "\"ForceNoShadowCasting\"=\"True\" $0",
+        "body": "\"ForceNoShadowCasting\"=\"True\"$0",
         "description": "Tags ForceNoShadowCasting"
     },
     "Tags IgnoreProjector": {
         "prefix": "TagsIgnoreProjector",
-        "body": "\"IgnoreProjector\"=\"True\" $0",
+        "body": "\"IgnoreProjector\"=\"True\"$0",
         "description": "Tags IgnoreProjector"
     },
     "Tags CanUseSpriteAtlas": {
         "prefix": "TagsCanUseSpriteAtlas",
-        "body": "\"CanUseSpriteAtlas\"=\"True\" $0",
+        "body": "\"CanUseSpriteAtlas\"=\"True\"$0",
         "description": "Tags CanUseSpriteAtlas"
     },
     "Tags PreviewType": {
         "prefix": "TagsPreviewType",
-        "body": "\"PreviewType\"=\"${1|Plane,Skybox|}\" $0",
+        "body": "\"PreviewType\"=\"${1|Plane,Skybox|}\"$0",
         "description": "Tags PreviewType"
     },
     "Tags Queue": {
         "prefix": "TagsQueue",
-        "body": "\"Queue\"=\"${1|Geometry,Transparent,Background,AlphaTest,Overlay|}\" $0",
+        "body": "\"Queue\"=\"${1|Geometry,Transparent,Background,AlphaTest,Overlay|}\"$0",
         "description": "Tags Queue"
     },
     "Tags RenderType": {
         "prefix": "TagsRenderType",
-        "body": "\"RenderType\"=\"${1|Opaque,Transparent,Background,Overlay|}\" $0",
+        "body": "\"RenderType\"=\"${1|Opaque,Transparent,Background,Overlay|}\"$0",
         "description": "Tags RenderType"
     },
     "Tags DisableBatching": {
         "prefix": "TagsDisableBatching",
-        "body": "\"DisableBatching\"=\"${1|False,True|}\" $0",
+        "body": "\"DisableBatching\"=\"${1|False,True|}\"$0",
         "description": "Tags DisableBatching"
     },
     "Pass Tags LightMode": {
         "prefix": "LightMode",
-        "body": "\"LightMode\" = \"${1|Always,ForwardBase,ForwardAdd,ShadowCaster,Vertex,VertexLM,Deferred,MotionVectors,PrepassBase,PrepassFinal,VertexLMRGBM|}\" $0",
+        "body": "\"LightMode\" = \"${1|Always,ForwardBase,ForwardAdd,ShadowCaster,Vertex,VertexLM,Deferred,MotionVectors,PrepassBase,PrepassFinal,VertexLMRGBM|}\"$0",
         "description": "Pass Tags LightMode"
     },
     "Pass Tags ForwardBase PassFlags": {
         "prefix": "PassFlags",
-        "body": "\"PassFlags\" = \"OnlyDirectional\" $0",
+        "body": "\"PassFlags\" = \"OnlyDirectional\"$0",
         "description": "Pass Tags ForwardBase PassFlags"
     },
     "Pass Tags RequireOptions": {
         "prefix": "RequireOptions",
-        "body": "\"RequireOptions\" = \"SoftVegetation\" $0"
+        "body": "\"RequireOptions\" = \"SoftVegetation\"$0"
     },
     "Pass Name": {
         "prefix": "Name",
