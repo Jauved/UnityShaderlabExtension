@@ -17,7 +17,7 @@
             "\t\t\tPass",
             "\t\t\t{",
             "\t\t\t\tCGPROGRAM",
-            "\t\t\t\t",
+            "\t\t\t\t\t",
             "\t\t\t\tENDCG",
             "\t\t\t}",
             "\t\t}",
