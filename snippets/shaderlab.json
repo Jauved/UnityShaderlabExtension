@@ -28,72 +28,72 @@
     },
     "Texture Main": {
         "prefix": "TextureMain",
-        "body": "_${1:MainTex}(\"${2:Main Texture}\", 2D) = \"${3|white,black,gray|}\" {}$0",
+        "body": "_${1:MainTex} (\"${2:Main Texture}\", 2D) = \"${3|white,black,gray|}\" {}$0",
         "description": "Main Texture"
     },
     "Texture Bump": {
         "prefix": "TextureBump",
-        "body": "[Normal] _${1:BumpMap}(\"Normal Map\", 2D) = \"bump\" {}$0",
+        "body": "[Normal] _${1:BumpMap} (\"Normal Map\", 2D) = \"bump\" {}$0",
         "description": "Bump Map"
     },
     "Texture SP": {
         "prefix": "TextureSP",
-        "body": "_${1:SPMap}(\"${2:Name}\", ${3:|3D,Cube|) = \"\" {}$0",
+        "body": "_${1:SPMap} (\"${2:Name}\", ${3:|3D,Cube|) = \"\" {}$0",
         "description": "Bump Map"
     },
     "Color": {
         "prefix": "Color",
-        "body": "_${1:Color}(\"${2:Name}\", Color) = (${3|1\\,1\\,1\\,1,0\\,0\\,0\\,0,0.5\\,0.5\\,0.5\\,0.5|})$0",
+        "body": "_${1:Color} (\"${2:Name}\", Color) = (${3|1\\,1\\,1\\,1,0\\,0\\,0\\,0,0.5\\,0.5\\,0.5\\,0.5|})$0",
         "description": "Color"
     },
     "Vector": {
         "prefix": "Vector",
-        "body": "_${1:Vector}(\"${2:Name}\", Vector) = (${3|0\\,0\\,0\\,0,1\\,1\\,1\\,1,0.5\\,0.5\\,0.5\\,0.5|})$0",
+        "body": "_${1:Vector} (\"${2:Name}\", Vector) = (${3|0\\,0\\,0\\,0,1\\,1\\,1\\,1,0.5\\,0.5\\,0.5\\,0.5|})$0",
         "description": "Vector"
     },
     "Range": {
         "prefix": "Range",
-        "body": "_${1:Range}(\"${2:Range}\", Range(${3:Min}, ${4:Max})) = ${5:DefaultValue}$0",
+        "body": "_${1:Range} (\"${2:Range}\", Range(${3:Min}, ${4:Max})) = ${5:DefaultValue}$0",
         "description": "Range"
     },
     "Float": {
         "prefix": "Float",
-        "body": "_${1:Name}(\"${2:Name}\", Float) = ${3:DefaultValue}$0",
+        "body": "_${1:Name} (\"${2:Name}\", Float) = ${3:DefaultValue}$0",
         "description": "Float"
     },
     "Int": {
         "prefix": "Int",
-        "body": "_${1:Name}(\"${2:Name}\", Int) = ${3:DefaultValue}$0",
+        "body": "_${1:Name} (\"${2:Name}\", Int) = ${3:DefaultValue}$0",
         "description": "Int"
     },
     "Cull Prop": {
         "prefix": "CullProp",
-        "body": "[Enum(UnityEngine.Rendering.CullMode)] _Cull(\"${1:Cull Mode}\", Int) = ${2:1}$0",
+        "body": "[Enum(UnityEngine.Rendering.CullMode)] _Cull (\"${1:Cull Mode}\", Int) = ${2:1}$0",
         "description": "Cull Mode Enum"
     },
     "SrcBlend Prop": {
         "prefix": "SrcBlendProp",
-        "body": "[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend(\"${1:SrcBlend Mode}\", Int) = ${2:1}$0",
+        "body": "[Enum(UnityEngine.Rendering.BlendMode)] _SrcBlend (\"${1:SrcBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
     "DstBlend Prop": {
         "prefix": "DstBlendProp",
-        "body": "[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend(\"${1:DstBlend Mode}\", Int) = ${2:1}$0",
+        "body": "[Enum(UnityEngine.Rendering.BlendMode)] _DstBlend (\"${1:DstBlend Mode}\", Int) = ${2:1}$0",
         "description": "Blend Mode Enum"
     },
     "Blend OP": {
         "prefix": "BlendOP",
-        "body": "[Enum(UnityEngine.Rendering.BlendOp)] _BlendOp(\"${1:DstBlend Op}\", Int) = ${2:1}$0",
+        "body": "[Enum(UnityEngine.Rendering.BlendOp)] _BlendOp (\"${1:DstBlend Op}\", Int) = ${2:1}$0",
         "description": "Blend Op"
     },
     "ZWrite Prop": {
         "prefix": "ZWriteProp",
-        "body": "[Enum(Off, 0, On, 1)] _ZWrite(\"ZWrite\", Int) = ${1:1}$0",
+        "body": "[Enum(Off, 0, On, 1)] _ZWrite (\"ZWrite\", Int) = ${1:1}$0",
         "description": "ZWrite Mode Enum"
     },
     "ZTest Prop": {
         "prefix": "ZTestProp",
-        "body": "[Enum(UnityEngine.Rendering.CompareFunction)] _ZTest(\"ZTest\", Int) = ${1:5}$0",
+        "body": "[Enum(UnityEngine.Rendering.CompareFunction)] _ZTest (\"ZTest\", Int) = ${1:5}$0",
         "description": "ZTest Mode Enum"
     },
     "Property Attributes": {
@@ -103,37 +103,37 @@
     },
     "Attributes HDR": {
         "prefix": "HDR",
-        "body": "HDR$0",
+        "body": "[HDR]$0",
         "description": "Attributes HDR"
     },
     "Attributes PerRendererData": {
         "prefix": "PerRendererData",
-        "body": "PerRendererData$0",
+        "body": "[PerRendererData]$0",
         "description": "Attributes PerRendererData"
     },
     "Attributes Gamma": {
         "prefix": "Gamma",
-        "body": "Gamma$0",
+        "body": "[Gamma]$0",
         "description": "Attributes Gamma"
     },
     "Attributes HideInInspector": {
         "prefix": "HideInInspector",
-        "body": "HideInInspector$0",
+        "body": "[HideInInspector]$0",
         "description": "Attributes HideInInspector"
     },
     "Attributes NoScaleOffset": {
         "prefix": "NoScaleOffset",
-        "body": "NoScaleOffset$0",
+        "body": "[NoScaleOffset]$0",
         "description": "Attributes NoScaleOffset"
     },
     "Attributes NonModifiableTextureData": {
         "prefix": "NonModifiableTextureData",
-        "body": "NonModifiableTextureData$0",
+        "body": "[NonModifiableTextureData]$0",
         "description": "Attributes NonModifiableTextureData"
     },
     "Property Drawers": {
         "prefix": "Drawers",
-        "body": "[${1|Toggle,ToggleOff,Enum(),KeywordEnum(),PowerSlider(),IntRange|}] $0",
+        "body": "[${1|Toggle,ToggleOff,Enum(),KeywordEnum(),PowerSlider(),IntRange|}]$0",
         "description": "Property Drawers"
     },
     "Drawers Toggle": {
