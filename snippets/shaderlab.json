@@ -173,7 +173,14 @@
     },
     "Tags All": {
         "prefix": "TagsAll",
-        "body": "Tags { \"Queue\"=\"${1|Geometry,Transparent,Background,AlphaTest,Overlay|}\" \"RenderType\"=\"${2|Opaque,Transparent,Background,Overlay|}\" \"DisableBatching\"=\"${3|False,True|}\" $4}$0",
+        "body": [
+            "Tags",
+            "{",
+            "\t\"Queue\"=\"${1|Geometry,Transparent,Background,AlphaTest,Overlay|}\"",
+            "\t\"RenderType\"=\"${2|Opaque,Transparent,Background,Overlay|}\"",
+            "\t\"DisableBatching\"=\"${3|False,True|}\"$0",
+            "}"
+        ],
         "description": "Tags All"
     },
     "Tags ForceNoShadowCasting": {
@@ -279,21 +286,21 @@
             "\tZFail ${7|Keep,Zero,Replace,IncrSat,DecrSat,Invert,IncrWrap,DecrWrap|}",
             "}$0"
         ],
-        "description":"Pass Stencil"
+        "description": "Pass Stencil"
     },
-    "Pass Stencil Ref":{
-        "prefix":"Ref",
-        "body":"Ref ${1:0}$0",
-        "description":"Stencil Ref 0-255"
+    "Pass Stencil Ref": {
+        "prefix": "Ref",
+        "body": "Ref ${1:0}$0",
+        "description": "Stencil Ref 0-255"
     },
-    "Pass Stencil ReadMask":{
-        "prefix":"ReadMask",
-        "body":"ReadMask ${1:255}$0",
-        "description":"Stencil ReadMask Default 255"
+    "Pass Stencil ReadMask": {
+        "prefix": "ReadMask",
+        "body": "ReadMask ${1:255}$0",
+        "description": "Stencil ReadMask Default 255"
     },
-    "Pass Stencil WriteMask":{
-        "prefix":"WriteMask",
-        "body":"WriteMask ${1:255}$0",
-        "description":"Stencil WriteMask Default 255"
+    "Pass Stencil WriteMask": {
+        "prefix": "WriteMask",
+        "body": "WriteMask ${1:255}$0",
+        "description": "Stencil WriteMask Default 255"
     }
 }
