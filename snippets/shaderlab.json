@@ -138,32 +138,32 @@
     },
     "Drawers Toggle": {
         "prefix": "Toggle",
-        "body": "${1|Toggle,ToggleOff|}$0",
+        "body": "[${1|Toggle,ToggleOff|}]$0",
         "description": "Property Toggle"
     },
     "Drawers Enum": {
         "prefix": "Enum",
-        "body": "Enum($1)$0",
+        "body": "[Enum($1)]$0",
         "description": "Property Enum"
     },
     "Drawers KeywordEnum": {
         "prefix": "KeywordEnum",
-        "body": "KeywordEnum($1)$0",
+        "body": "[KeywordEnum($1)]$0",
         "description": "Property KeywordEnum"
     },
     "Property Decorator Space": {
         "prefix": "Space",
-        "body": "Space$0",
+        "body": "[Space]$0",
         "description": "Property Decorator Space"
     },
     "Property Decorator Space()": {
         "prefix": "Space()",
-        "body": "Space(${1:20})$0",
+        "body": "[Space(${1:20})]$0",
         "description": "Property Decorator Space()"
     },
     "Property Decorator Header": {
         "prefix": "Header",
-        "body": "Header(${1:Header})$0",
+        "body": "[Header(${1:Header})]$0",
         "description": "Property Decorator Header"
     },
     "Tags Min": {
