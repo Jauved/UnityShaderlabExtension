@@ -36,7 +36,11 @@
             },
             {
                 "include": "#builtin-tag-values"
-            }
+            },
+            //造成了一些显示问题
+            {
+                "include": "source.hlsl"
+            },
         ]
     },
     "pragma-variable": {
