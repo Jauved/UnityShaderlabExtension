@@ -2,7 +2,7 @@
     "name": "unityshaderlab",
     "displayName": "UnityShaderlab",
     "description": "Unity Shader Support",
-    "version": "0.0.8",
+    "version": "0.0.3",
     "publisher": "Jauved",
     "license": "MIT",
     "engines": {
