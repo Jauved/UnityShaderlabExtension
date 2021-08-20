@@ -83,7 +83,7 @@
     },
     "Blend OP": {
         "prefix": "BlendOP",
-        "body": "[Enum(UnityEngine.Rendering.BlendOp)] _BlendOp (\"${1:DstBlend Op}\", Int) = ${2:1}$0",
+        "body": "[Enum(UnityEngine.Rendering.BlendOp)] _BlendOp (\"${1:Blend Op}\", Int) = ${2:1}$0",
         "description": "Prop Blend Op"
     },
     "ZWrite Prop": {
